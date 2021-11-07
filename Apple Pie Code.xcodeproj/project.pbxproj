@@ -8,22 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		557EF505273812F40064F772 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557EF504273812F40064F772 /* AppDelegate.swift */; };
-		557EF507273812F40064F772 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557EF506273812F40064F772 /* SceneDelegate.swift */; };
 		557EF509273812F40064F772 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557EF508273812F40064F772 /* ViewController.swift */; };
-		557EF50C273812F40064F772 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 557EF50A273812F40064F772 /* Main.storyboard */; };
 		557EF50E273812F50064F772 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 557EF50D273812F50064F772 /* Assets.xcassets */; };
-		557EF511273812F50064F772 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 557EF50F273812F50064F772 /* LaunchScreen.storyboard */; };
+		557EF5192738136A0064F772 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 557EF5182738136A0064F772 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		557EF501273812F40064F772 /* Apple Pie Code.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apple Pie Code.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		557EF504273812F40064F772 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		557EF506273812F40064F772 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		557EF508273812F40064F772 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		557EF50B273812F40064F772 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		557EF50D273812F50064F772 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		557EF510273812F50064F772 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		557EF512273812F50064F772 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		557EF5182738136A0064F772 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +52,10 @@
 		557EF503273812F40064F772 /* Apple Pie Code */ = {
 			isa = PBXGroup;
 			children = (
+				557EF5182738136A0064F772 /* Default-568h@2x.png */,
 				557EF504273812F40064F772 /* AppDelegate.swift */,
-				557EF506273812F40064F772 /* SceneDelegate.swift */,
 				557EF508273812F40064F772 /* ViewController.swift */,
-				557EF50A273812F40064F772 /* Main.storyboard */,
 				557EF50D273812F50064F772 /* Assets.xcassets */,
-				557EF50F273812F50064F772 /* LaunchScreen.storyboard */,
 				557EF512273812F50064F772 /* Info.plist */,
 			);
 			path = "Apple Pie Code";
@@ -125,9 +119,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				557EF511273812F50064F772 /* LaunchScreen.storyboard in Resources */,
 				557EF50E273812F50064F772 /* Assets.xcassets in Resources */,
-				557EF50C273812F40064F772 /* Main.storyboard in Resources */,
+				557EF5192738136A0064F772 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,30 +133,10 @@
 			files = (
 				557EF509273812F40064F772 /* ViewController.swift in Sources */,
 				557EF505273812F40064F772 /* AppDelegate.swift in Sources */,
-				557EF507273812F40064F772 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		557EF50A273812F40064F772 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				557EF50B273812F40064F772 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		557EF50F273812F50064F772 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				557EF510273812F50064F772 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		557EF513273812F50064F772 /* Debug */ = {
@@ -293,8 +266,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Apple Pie Code/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -321,8 +292,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Apple Pie Code/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
