@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    // MARK: - Properties
+    // MARK: - UIProperties
     let buttonsStackView = UIStackView()
     let correctWordLabel = UILabel()
     var letterButtons = [UIButton]()
@@ -18,10 +18,158 @@ class ViewController: UIViewController {
     let topStackView = UIStackView()
     let treeImageView = UIImageView()
     
-    // MARK: - Methods
-    @objc func buttonPressed(_ sender: UIButton) {
-        print(#line, #function, sender.title(for: .normal) ?? "nil")
+    // MARK: - Properties
+    var currentGame: Game! //опциональное значение
+    let incorrectMovesAllowed = 7
+    var listOfWords = [
+        "Александрия",
+        "Атланта",
+        "Ахмедабад",
+        "Багдад",
+        "Бангалор",
+        "Бангкок",
+        "Барселона",
+        "Белу-Оризонти",
+        "Богота",
+        "Буэнос-Айрес",
+        "Вашингтон",
+        "Гвадалахара",
+        "Гонконг",
+        "Гуанчжоу",
+        "Дакка",
+        "Даллас",
+        "Далянь",
+        "Дар-эс-Салам",
+        "Дели",
+        "Джакарта",
+        "Дунгуань",
+        "Йоханнесбург",
+        "Каир",
+        "Калькутта",
+        "Карачи",
+        "Киншаса",
+        "Куала Лумпур",
+        "Лагос",
+        "Лахор",
+        "Лима",
+        "Лондон",
+        "Лос-Анджелес",
+        "Луанда",
+        "Мадрид",
+        "Майами",
+        "Манила",
+        "Мехико",
+        "Москва",
+        "Мумбаи",
+        "Нагоя",
+        "Нанкин",
+        "Нью-Йорк",
+        "Осака",
+        "Париж",
+        "Пекин",
+        "Пуна",
+        "Рио-де-Жанейро",
+        "Сан-Паулу",
+        "Санкт-Петербург",
+        "Сантьяго",
+        "Сеул",
+        "Сиань",
+        "Сингапур",
+        "Стамбул",
+        "Сурат",
+        "Сучжоу",
+        "Тегеран",
+        "Токио",
+        "Торонто",
+        "Тяньцзинь",
+        "Ухань",
+        "Филадельфия",
+        "Фошань",
+        "Фукуока",
+        "Хайдарабад",
+        "Ханчжоу",
+        "Харбин",
+        "Хартум",
+        "Хошимин",
+        "Хьюстон",
+        "Цзинань",
+        "Циндао",
+        "Ченнай",
+        "Чикаго",
+        "Чунцин",
+        "Чэнду",
+        "Шанхай",
+        "Шэньчжэнь",
+        "Шэньян",
+        "Эр-Рияд",
+        "Янгон",
+    ].shuffled()    // случайный порядок
+    var totalWins = 0 {
+        didSet {
+            newRound()
+        }
     }
+    var totalLosses = 0 {
+        didSet {
+            newRound()
+        }
+    }
+    
+    // MARK: - Methods
+    func enabledButtons(_ enable: Bool = true) {
+        for button in letterButtons {
+            button.isEnabled = enable
+        }
+    }
+    
+    func newRound() {
+        guard !listOfWords.isEmpty else {
+            enabledButtons(false)
+            updateUI()
+            return
+        }
+        let newWord = listOfWords.removeFirst()
+        currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed)
+        updateUI()
+        enabledButtons()
+    }
+    
+    func updateWordLabel() {
+        var displayWord: [String] = []
+        for letter in currentGame.guessedWord {
+            displayWord.append(String(letter))
+        }
+        correctWordLabel.text = displayWord.joined(separator: " ")
+    }
+    
+    func updateState() {
+        if currentGame.incorrectMovesRemaining < 1 { // или == 0
+            totalLosses += 1
+        } else if currentGame.guessedWord == currentGame.word {
+            totalWins += 1
+        } else {
+            updateUI()
+        }
+    }
+    
+    func updateUI() {
+        let movesRemaining = currentGame.incorrectMovesRemaining
+        //let imageNumber = movesRemaining < 0 ? 0 : movesRemaining < 8 ? movesRemaining : 7 // двойной тернарный оператор
+        let imageNumber = (movesRemaining + 64) % 8
+        let image = "Tree\(imageNumber)"
+        treeImageView.image = UIImage(named: image)
+        updateWordLabel()
+        scoreLabel.text = ("Выигрыши: \(totalWins), проигрыши: \(totalLosses)")
+    }
+    
+    // MARK: - UIMethods
+    @objc func letterButtonPressed(_ sender: UIButton) {
+        sender.isEnabled = false
+        let letter = sender.title(for: .normal)!
+        currentGame.playerGuest(letter: Character(letter))
+        updateState()
+    }
+    
     func initLatterButtons(fontSize: CGFloat = 17) {
         
         // init letter buttons
@@ -30,9 +178,10 @@ class ViewController: UIViewController {
             let title: String = buttonTitle == "_" ? "" : String(buttonTitle)
             let button = UIButton()
             if buttonTitle != "_"{
-                button.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
+                button.addTarget(self, action: #selector(letterButtonPressed(_:)), for: .touchUpInside)
             }
             button.setTitle(title, for: [])
+            button.setTitleColor(.systemGray, for: .disabled)
             button.setTitleColor(.systemBlue, for: .normal)
             button.setTitleColor(.systemTeal, for: .highlighted)
             button.titleLabel?.textAlignment = .center
@@ -67,7 +216,7 @@ class ViewController: UIViewController {
         buttonsStackView.axis = .vertical
         
         // Setup correct word label
-        correctWordLabel.font = UIFont.systemFont(ofSize: factor / 10)
+        correctWordLabel.font = UIFont.systemFont(ofSize: factor / 12)
         correctWordLabel.text = "Word"
         correctWordLabel.textAlignment = .center
         
@@ -100,7 +249,10 @@ class ViewController: UIViewController {
         // Setup view
         view.backgroundColor = .white
         view.addSubview(topStackView)
+        
         updateUI(to: view.bounds.size)
+        
+        newRound()
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
