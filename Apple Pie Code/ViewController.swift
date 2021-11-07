@@ -72,7 +72,7 @@ class ViewController: UIViewController {
         correctWordLabel.textAlignment = .center
         
         // Setup letter buttons
-        initLatterButtons()
+        initLatterButtons(fontSize: factor / 20)
         
         // Setup score label
         scoreLabel.font = UIFont.systemFont(ofSize: factor / 16)
