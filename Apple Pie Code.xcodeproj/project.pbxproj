@@ -11,6 +11,7 @@
 		5531C4CB27384B2700ABF3D5 /* Screenshot02.png in Resources */ = {isa = PBXBuildFile; fileRef = 5531C4C827384B2700ABF3D5 /* Screenshot02.png */; };
 		5531C4CC27384B2700ABF3D5 /* Screenshot03.png in Resources */ = {isa = PBXBuildFile; fileRef = 5531C4C927384B2700ABF3D5 /* Screenshot03.png */; };
 		5531C4CD27384B2700ABF3D5 /* Screenshot01.png in Resources */ = {isa = PBXBuildFile; fileRef = 5531C4CA27384B2700ABF3D5 /* Screenshot01.png */; };
+		5531C4CF27384BBC00ABF3D5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5531C4CE27384BBC00ABF3D5 /* README.md */; };
 		557EF505273812F40064F772 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557EF504273812F40064F772 /* AppDelegate.swift */; };
 		557EF509273812F40064F772 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557EF508273812F40064F772 /* ViewController.swift */; };
 		557EF50E273812F50064F772 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 557EF50D273812F50064F772 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		5531C4C827384B2700ABF3D5 /* Screenshot02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot02.png; sourceTree = "<group>"; };
 		5531C4C927384B2700ABF3D5 /* Screenshot03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot03.png; sourceTree = "<group>"; };
 		5531C4CA27384B2700ABF3D5 /* Screenshot01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot01.png; sourceTree = "<group>"; };
+		5531C4CE27384BBC00ABF3D5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		557EF501273812F40064F772 /* Apple Pie Code.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apple Pie Code.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		557EF504273812F40064F772 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		557EF508273812F40064F772 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 		557EF4F8273812F40064F772 = {
 			isa = PBXGroup;
 			children = (
+				5531C4CE27384BBC00ABF3D5 /* README.md */,
 				557EF503273812F40064F772 /* Apple Pie Code */,
 				557EF502273812F40064F772 /* Products */,
 			);
@@ -139,6 +142,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5531C4CF27384BBC00ABF3D5 /* README.md in Resources */,
 				5531C4CC27384B2700ABF3D5 /* Screenshot03.png in Resources */,
 				557EF50E273812F50064F772 /* Assets.xcassets in Resources */,
 				557EF51B27381E290064F772 /* Default-568h@2x.png in Resources */,
